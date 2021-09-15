@@ -1,0 +1,74 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ pageTitle }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="refresh($event)" pullMin="100" pullMax="200" closeDuration="0.3">
+    <ion-refresher-content pullingIcon="arrow-down-outline" pullingText="{{ 'Pull to refresh' | translate }}" refreshingSpinner="crescent"
+      refreshingText="{{ 'Refreshing' | translate }}...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <form [formGroup]="form" *ngIf="settingsReady">
+    <ion-list *ngIf="page == 'main'">
+
+      <ion-item>
+        <ion-label>{{ 'FIRSTNAME' | translate }}</ion-label>
+        <ion-label>{{ user.first_name | translate }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>{{ 'LASTNAME' | translate }}</ion-label>
+        <ion-label>{{ user.last_name | translate }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>{{ 'NUMBERTEL' | translate }}</ion-label>
+        <ion-label>{{ user.telephone | translate }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>{{ 'EMAIL' | translate }}</ion-label>
+        <ion-label>{{ user.email | translate }}</ion-label>
+      </ion-item>
+
+      <button ion-item (click)="profil_create()">
+        {{ 'SETTINGS_MY_PROFILE_BUTTON' | translate }}
+      </button>
+
+      <button ion-item (click)="profil_create_autre()" >
+        {{ 'SETTINGS_AUTRE_PROFILE_BUTTON' | translate }}
+      </button>
+      <!-- <button ion-item  (click)="profil_create_autre()">
+        {{ 'SETTINGS_CHANGERPASSE_BUTTON' | translate }}
+      </button> -->
+
+      <ion-item>
+        <ion-label>{{ 'SETTINGS_LANGUE' | translate }}</ion-label>
+        <ion-select  (ionChange)="onSelectChange($event)" >
+          <ion-option value="fr" checked="true">Francais</ion-option>
+          <ion-option value="en">Anglais</ion-option>
+          <ion-option value="it">Italien</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngIf="page == 'profile'">
+      <ion-item>
+        <ion-label>{{ 'SETTINGS_OPTION4' | translate }}</ion-label>
+        <ion-input formControlName="option4"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngIf="page == 'autreprofile'">
+      <ion-item>
+        <ion-label>{{ 'SETTINGS_OPTION4' | translate }}</ion-label>
+        <ion-input formControlName="option4"></ion-input>
+      </ion-item>
+    </ion-list>
+  </form>
+  <div padding>
+    <button ion-button  size="large" type="submit"  class="connexion"  block (click)="logout()">{{ 'LOGOUT_BUTTON' | translate }}</button>
+  </div>
+</ion-content>

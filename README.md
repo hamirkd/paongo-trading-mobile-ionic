@@ -94,3 +94,9 @@ code (ex: en/gb/de/es/etc.).
 
 To change the language of the app, edit `src/app/app.component.ts` and modify
 `translate.use('en')` to use the LANGCODE from `src/assets/i18n/`
+
+### COMPILER APK
+$ ionic cordova build android
+
+### GENERATION DES IMAGES
+$ ionic cordova resources

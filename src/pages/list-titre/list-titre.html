@@ -1,0 +1,46 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ 'TITRE_TITLE' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="refresh($event)" pullMin="100" pullMax="200" closeDuration="0.3">
+    <ion-refresher-content pullingIcon="arrow-down-outline" pullingText="{{ 'Pull to refresh' | translate }}" refreshingSpinner="crescent"
+      refreshingText="{{ 'Refreshing' | translate }}...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <div *ngFor="let data of liste">
+    <h1 for="" padding>{{data.titre}}</h1>
+    <ion-card *ngFor="let item of data.data">
+
+      <ion-item>
+        <ion-avatar item-start>
+          <img [src]="'assets/img/appicon.png'" [title]="data.titre">
+        </ion-avatar>
+        <h2>Ordre : {{item.id}}</h2>
+      </ion-item>
+
+
+      <ion-card-content>
+        <p>Valeur achat : {{item.montant}}</p>
+        <p>Paiement : {{item.etat_paiement}}</p>
+        <p>Date Paiement :{{item.updated_at|date :'d MMM y'}}</p>
+        <p>Valeur : {{item.valeur_titre_achete ? item.valeur_titre_achete.toFixed(2) : 0}}</p>
+        <p>Dividente : {{item.dividante_titre_achete ? item.dividante_titre_achete.toFixed(2) : 0}}</p>
+      </ion-card-content>
+
+    </ion-card>
+  </div>
+  <!-- <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab> -->
+  <ion-fab bottom right (click)="addItem()">
+    <button ion-fab mini color="danger"><ion-icon name="add"></ion-icon></button>
+    
+  </ion-fab>
+</ion-content>

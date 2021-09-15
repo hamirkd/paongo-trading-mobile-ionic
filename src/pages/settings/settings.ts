@@ -1,9 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-import { Settings } from '../../providers';
+import { Settings, User as UserService } from '../../providers';
+import { App } from 'ionic-angular';
+import { User } from '../../models/user';
+
 
 /**
  * The Settings page is a simple form that syncs with a Settings provider
@@ -15,7 +18,7 @@ import { Settings } from '../../providers';
   selector: 'page-settings',
   templateUrl: 'settings.html'
 })
-export class SettingsPage {
+export class SettingsPage implements OnInit{
   // Our local settings object
   options: any;
 
@@ -33,12 +36,22 @@ export class SettingsPage {
   pageTitle: string;
 
   subSettings: any = SettingsPage;
-
+  user:User=new User();
+  ngOnInit() {
+    this.userService.findUserById().subscribe(data=>{
+      this.user = JSON.parse(JSON.stringify(data)) as User;
+      console.log(this.user)
+    },err=>{
+      //message d'erreur
+      console.log(err);
+    });
+  }
   constructor(public navCtrl: NavController,
     public settings: Settings,
     public formBuilder: FormBuilder,
     public navParams: NavParams,
-    public translate: TranslateService) {
+    public translate: TranslateService,private userService:UserService,
+    public appCtrl: App) {
   }
 
   _buildForm() {
@@ -91,5 +104,9 @@ export class SettingsPage {
 
   ngOnChanges() {
     console.log('Ng All Changes');
+  }
+  logout(){
+    this.userService.logout();
+    this.appCtrl.getRootNav().push('WelcomePage');
   }
 }

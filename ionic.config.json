@@ -1,5 +1,8 @@
 {
-  "name": "sngsApp",
-  "integrations": {},
+  "name": "BtcPaongo",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
   "type": "ionic-angular"
 }

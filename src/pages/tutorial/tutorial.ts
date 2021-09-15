@@ -55,6 +55,14 @@ export class TutorialPage {
       animate: true,
       direction: 'forward'
     });
+    localStorage.setItem("TutoralNoActif","yes");
+  }
+
+  startApp2() {
+    this.navCtrl.setRoot('WelcomePage', {}, {
+      animate: true,
+      direction: 'forward'
+    });
   }
 
   onSlideChangeStart(slider) {

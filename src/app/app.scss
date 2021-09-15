@@ -14,3 +14,23 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+
+// .button-inner,.bar-button-default,.back-button{
+//     color: #7b0701;
+//   }
+//   .button>.button-inner{
+//     //   color: white;
+//   }
+// .ion-md-add{
+//     // color: white!important;
+// }
+// .fab-md{
+//     background-color: #7b0701;;
+// }
+// .tab-button-text,.tabs-md .tab-button[aria-selected=true] .tab-button-icon {
+//     color: #7b0701;}
+
+.button-ios-danger{
+    background-color: #7b0701;
+  }

@@ -1,24 +1,35 @@
 {
+  "BACK_BUTTON_TEXT": "Retour",
+
   "NAME": "Nom",
+  "FIRSTNAME":"Nom",
+  "LASTNAME":"Prénom (s) ",
+  "USERNAME": "Nom utilisateur ou E-mail",
   "PASSWORD": "Mot de passe",
+  "PASSWORDCONFIRME": "Confirmer votre mot de passe",
   "EMAIL": "E-mail",
   "LOGIN": "Connexion",
   "SIGNUP": "Inscription",
+  "NUMBERTEL":"Téléphone",
 
-  "TAB1_TITLE": "Items",
+  "TAB1_TITLE": "Titres",
   "TAB2_TITLE": "Recherche",
   "TAB3_TITLE": "Paramètres",
 
   "MAP_TITLE": "Carte",
 
-  "TUTORIAL_SLIDE1_TITLE": "Bienvenue dans le kit de démarrage Ionic Super Starter",
-  "TUTORIAL_SLIDE1_DESCRIPTION": "<b>Ionic Super Starter</b> est un kit complet pour démarrer sur Ionic. Il repose sur les meilleures pratiques et implémente de nombreux types de pages.",
+  "TUTORIAL_SLIDE1_TITLE": "Bienvenue sur l'application mobile de Paongo Trading",
+  "TUTORIAL_SLIDE1_DESCRIPTION": "<b>Paongo Mobile</b> est la version mobile de la plateforme d'achat de titre et de suivi des flux.",
 
-  "TUTORIAL_SLIDE2_TITLE": "Comment utiliser le Super Starter",
-  "TUTORIAL_SLIDE2_DESCRIPTION": "Assemblez les types de pages désirés et supprimez les autres. Le kit inclut plusieurs mises en page courantes d’applications mobiles, comme les pages de connexion et d’inscription, les onglets et cette page de tutoriel.",
+  "TUTORIAL_SLIDE2_TITLE": "Comment utiliser le Paongo Mobile",
+  "TUTORIAL_SLIDE2_DESCRIPTION": "Après avoir créer un compte et s'authentifier, vous aurez accès aux différentes fonctionnalités de Paongo Trading. <p>Vous pourez : </>",
 
-  "TUTORIAL_SLIDE3_TITLE": "Pour commencer",
-  "TUTORIAL_SLIDE3_DESCRIPTION": "Si vous avez besoin d’aide, consultez le README du Super Starter pour un tutoriel complet.",
+  "TUTORIAL_SLIDE3_TITLE": "Fonctionnalités",
+  "TUTORIAL_SLIDE3_DESCRIPTION": "<ul><li>Suivre l'évolution de vos titres achétés</li><li>L'achat de titre supplémentaire</li><li>Le retrait des profits</li></ul>",
+
+  "TUTORIAL_SLIDE4_TITLE": "Êtes-vous prêt pour nous rejoindre?",
+  "TUTORIAL_CONTINUE_BUTTON": "Poursuivre",
+  "WELCOME_INTRO": "Bienvenue",
 
   "SETTINGS_TITLE": "Paramètres",
   "SETTINGS_OPTION1": "Option 1",
@@ -36,13 +47,32 @@
   "SIGNUP_TITLE": "Inscription",
   "SIGNUP_ERROR": "Inscription impossible. Veuillez vérifier les informations de votre compte et réessayer.",
   "SIGNUP_BUTTON": "Inscription",
+  "LOGOUT_BUTTON": "Déconnexion",
 
   "LIST_MASTER_TITLE": "Items",
+  "TITRE_TITLE": "Titres",
 
-  "ITEM_CREATE_TITLE": "Nouvel item",
+  "TITRE_CREATE_TITLE": "Acheter un titre",
   "ITEM_CREATE_CHOOSE_IMAGE": "Ajouter une image",
 
   "CARDS_TITLE": "Social",
+  "DONE_BUTTON": "Valider",
+  "CANCEL_BUTTON": "Annuler",
+  "DELETE_BUTTON": "Supprimer",
 
-  "SEARCH_TITLE": "Recherche"
+  "SEARCH_TITLE": "Recherche",
+  "Refreshing":"En cours d'actualisation",
+  "Pull to refresh":"Tirer pour rafraîchir",
+  "VEUILLEZCONFIRMERMOTPASSE":"Veuillez confirmer votre mot de passe",
+  "SETTINGS_PROFILE_BUTTON": "Modifier profil",
+  "SETTINGS_MY_PROFILE_BUTTON": "Mon profil",
+  "SETTINGS_AUTRE_PROFILE_BUTTON": "Personne à prévenir en cas de besoin",
+  "SETTINGS_CHANGERPASSE_BUTTON": "Changer de mot de passe",
+  "PROFESSION":"Profession",
+  "ADRESSEPHYSIQUE":"Adresse",
+  "VILLE":"Ville",
+  "PAYS":"Pays",
+  "CODEPOSTAL":"Code Postal",
+  "CNIB":"CNIB",
+  "SETTINGS_LANGUE":"Langue"
 }

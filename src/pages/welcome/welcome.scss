@@ -43,4 +43,14 @@ page-welcome {
       background-color: rgb(220, 220, 220);
     }
   }
+  button.signup {
+    margin-top: 25px;
+    background-color: #7b0701!important;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    color: #fff;
+
+    &.activated {
+      background-color: rgb(220, 220, 220);
+    }
+  }
 }

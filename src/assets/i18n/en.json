@@ -7,28 +7,26 @@
   "PASSWORD": "Password",
   "LOGIN": "Sign in",
   "SIGNUP": "Sign up",
+  "NUMBERTEL":"Cel Number",
 
-  "TAB1_TITLE": "Items",
+  "TAB1_TITLE": "Titres",
   "TAB2_TITLE": "Search",
   "TAB3_TITLE": "Settings",
 
   "MAP_TITLE": "Map",
 
-  "TUTORIAL_SKIP_BUTTON": "Skip",
-  "TUTORIAL_CONTINUE_BUTTON": "Continue",
+  "TUTORIAL_SLIDE1_TITLE": "Bienvenue sur l'application mobile de Paongo Trading",
+  "TUTORIAL_SLIDE1_DESCRIPTION": "<b>Paongo Mobile</b> est la version mobile de la plateforme d'achat de titre et de suivi des flux.",
 
-  "TUTORIAL_SLIDE1_TITLE": "Welcome to the Ionic Super Starter",
-  "TUTORIAL_SLIDE1_DESCRIPTION": "The <b>Ionic Super Starter</b> is a fully-featured Ionic starter with many pre-built pages and best practices.",
+  "TUTORIAL_SLIDE2_TITLE": "Comment utiliser le Paongo Mobile",
+  "TUTORIAL_SLIDE2_DESCRIPTION": "Après avoir créer un compte et s'authentifier, vous aurez accès aux différentes fonctionnalités de Paongo Trading. <p>Vous pourez : </>",
 
-  "TUTORIAL_SLIDE2_TITLE": "How to use the Super Starter",
-  "TUTORIAL_SLIDE2_DESCRIPTION": "Assemble the various page types you want and remove the ones you don't. We've provided many common mobile app page layouts, like login and signup pages, tabs, and this tutorial page.",
+  "TUTORIAL_SLIDE3_TITLE": "Fonctionnalités",
+  "TUTORIAL_SLIDE3_DESCRIPTION": "<ul><li>Suivre l'évolution de vos titres achétés</li><li>L'achat de titre supplémentaire</li><li>Le retrait des profits</li></ul>",
 
-  "TUTORIAL_SLIDE3_TITLE": "Getting Started",
-  "TUTORIAL_SLIDE3_DESCRIPTION": "Need help? Check out the Super Starter README for a full tutorial",
-
-  "TUTORIAL_SLIDE4_TITLE": "Ready to Play?",
-
-  "WELCOME_INTRO": "The starting point for your next great Ionic app",
+  "TUTORIAL_SLIDE4_TITLE": "Êtes-vous prêt pour nous rejoindre?",
+  "TUTORIAL_CONTINUE_BUTTON": "Poursuivre",
+  "WELCOME_INTRO": "Bienvenue",
 
   "SETTINGS_TITLE": "Settings",
   "SETTINGS_OPTION1": "Option 1",
@@ -50,6 +48,7 @@
   "SIGNUP_BUTTON": "Sign up",
 
   "LIST_MASTER_TITLE": "Items",
+  "TITRE_TITLE": "Titres",
 
   "ITEM_CREATE_TITLE": "New Item",
   "ITEM_CREATE_CHOOSE_IMAGE": "Add Image",
@@ -64,5 +63,21 @@
   "CARDS_TITLE": "Social",
 
   "SEARCH_TITLE": "Search",
-  "SEARCH_PLACEHOLDER": "Search the items list, e.g. \"Donald Duck\""
+  "SEARCH_PLACEHOLDER": "Search the items list, e.g. \"Donald Duck\"",
+  "SETTINGS_LANGUE":"Language",
+
+  "TITRE_CREATE_TITLE": "Buy titre",
+
+  "Refreshing":"Refreshing",
+  "Pull to refresh":"Pull to refresh",
+  "VEUILLEZCONFIRMERMOTPASSE":"Veuillez confirmer votre mot de passe",
+  "SETTINGS_MY_PROFILE_BUTTON": "My account",
+  "SETTINGS_AUTRE_PROFILE_BUTTON": "Personne à prévenir en cas de besoin",
+  "SETTINGS_CHANGERPASSE_BUTTON": "Changer de mot de passe",
+  "PROFESSION":"Job",
+  "ADRESSEPHYSIQUE":"Adresse",
+  "VILLE":"Town",
+  "PAYS":"Country",
+  "CODEPOSTAL":"Postal Code",
+  "CNIB":"CNIB"
 }
