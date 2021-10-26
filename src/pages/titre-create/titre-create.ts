@@ -6,7 +6,7 @@ import { TitreModel } from '../../models/titre.model2';
 import { User } from '../../models/user';
 import { User as UserService } from '../../providers';
 import { TitreService } from '../../providers/titre/titre';
-const FRAIS_ACHAT = 250;
+
 class Titre {
   id: string;
   nomprenom: string;
@@ -27,6 +27,7 @@ class Titre {
   supprimer: string;
   created_at: string;
   updated_at: string;
+  version?:string;
 }
 @IonicPage()
 @Component({
@@ -77,34 +78,27 @@ export class TitreCreatePage {
     })
   }
   
+  
   choix_titre_(titre: TitreModel) {
     this.choix_titre = titre;
     this.on_register = true;
     this.nombre_titre_achete = 0;
     this.valeur_titre_achete = 0;
     this.limit_titre_achete = 0;
-    this.titreService.nombre_titre_acheter(titre.nom).subscribe(data => {
+    this.choix_titre.montant = 0;
+    this.titreService.montant_achat_titre_id(titre.id).subscribe(data => {
       
-      let data2 = JSON.parse(JSON.stringify(data)) as { nombre, montant, limit }
-      this.nombre_titre_achete = data2.nombre as number;
+      let data2 = JSON.parse(JSON.stringify(data)) as { titre, balance, balance_usd,valeur_titre_achete,limit}
+      
+      this.valeur_titre_achete = data2.valeur_titre_achete as number;
+      this.choix_titre.montant = data2.valeur_titre_achete as number;
       this.limit_titre_achete = data2.limit as number;
-
-      this.titreService.getMyBalance(titre.id).subscribe(data2 => {
-        this.on_register = false;
-        let data = JSON.parse(JSON.stringify(data2))
-        let selectTitre = { titre: titre.nom, balance: data && data.balance ? data.balance : 0, balance_usd: data && data.balance_usd ? data.balance_usd : 0 };
-        this.valeur_titre_achete = selectTitre.balance_usd / this.nombre_titre_achete + FRAIS_ACHAT;
-        this.choix_titre.montant = this.valeur_titre_achete;
-      }, err => {
-        this.on_register = false;
-        this.valeur_titre_achete = titre.montant+FRAIS_ACHAT;
-        this.choix_titre.montant = this.valeur_titre_achete;
-      })
+      this.on_register = false;
 
     }, err => {
       this.on_register = false;
-      this.nombre_titre_achete = titre.montant+FRAIS_ACHAT;
-      this.valeur_titre_achete = this.valeur_titre_achete;
+      this.nombre_titre_achete = 0;
+      this.valeur_titre_achete = 0;
       this.limit_titre_achete = 0;
     })
   }
@@ -143,6 +137,7 @@ export class TitreCreatePage {
     }
     this.titre.titre = this.choix_titre.nom;
     this.titre.titre_id=this.choix_titre.id;
+    this.titre.version = "V1";
     this.titre.montant=this.choix_titre.montant?this.choix_titre.montant.toFixed(1):0+'';
     this.on_register = true;
     this.titreService.addTitre(this.titre).subscribe(data2 => {

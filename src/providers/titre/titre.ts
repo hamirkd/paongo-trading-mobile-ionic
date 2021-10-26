@@ -47,6 +47,22 @@ export class TitreService {
 
     return seq;
   }
+  
+  montant_achat_titre_id(titreModel:number){
+    let seq = this.api.get('achats_/montant_achat_titre_id/' + titreModel).share();
+
+    seq.subscribe((res: any) => {
+      // If the API returned a successful response, mark the user as logged in
+        console.log(res)
+      if (res.status == 'success') {
+      } else {
+      }
+    }, err => {
+      console.error('ERROR', err);
+    });
+
+    return seq;
+  }
   getMyBalance(id) {
     let seq = this.api.get('binance/'+id).share();
     
