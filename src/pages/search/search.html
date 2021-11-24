@@ -1,16 +1,16 @@
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>{{ 'SEARCH_TITLE' | translate }}</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>{{ 'TAB2_TITLE' | translate }}</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
 <ion-content>
-  <ion-searchbar (ionInput)="getItems($event)" placeholder="{{ 'SEARCH_PLACEHOLDER' | translate }}"></ion-searchbar>
-  <ion-list>
-    <button ion-item (click)="openItem(item)" *ngFor="let item of currentItems">
+
+    <ion-list *ngIf="!onregister">
+        <button ion-item (click)="openItem(item)" *ngFor="let item of currentItems">
       <ion-avatar item-start>
         <img [src]="item.profilePic" />
       </ion-avatar>
@@ -18,5 +18,22 @@
       <p>{{item.about}}</p>
       <ion-note item-end *ngIf="item.note">{{item.note}}</ion-note>
     </button>
-  </ion-list>
+
+
+
+
+    </ion-list>
+    <ion-grid style="height: 100%">
+        <ion-row justify-content-center align-items-center style="height: 100%" *ngIf="onregister">
+
+            <div class="col-xs-1 col-sm-1 col-lg-5 col-md-3" style="text-align: center;align-self: center;">
+                <img src="../../../../../assets/img/waitting.gif" alt="" style="background-size: 100%;width: 80px;height: 80px;">
+                <img src="../../../../../assets/img/waitting.gif" alt="" style="background-size: 100%;width: 80px;height: 80px;">
+            </div>
+
+        </ion-row>
+    </ion-grid>
+    <ion-fab bottom right (click)="buyCash()">
+        <button ion-fab mini color="danger"><ion-icon name="cash"></ion-icon></button>
+    </ion-fab>
 </ion-content>

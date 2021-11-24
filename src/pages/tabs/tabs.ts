@@ -11,7 +11,7 @@ import { Tab1Root, Tab2Root, Tab3Root } from '../';
 })
 export class TabsPage {
   tab1Root: any = Tab1Root;
-  // tab2Root: any = Tab2Root;
+  tab2Root: any = Tab2Root;
   tab3Root: any = Tab3Root;
 
   tab1Title = " ";

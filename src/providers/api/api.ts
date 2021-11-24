@@ -7,6 +7,8 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class Api {
   url: string = 'https://v2.api.paongo-trading.com/api';
+  url2: string = 'https://v2.api.paongo-trading.com';
+  // url: string = 'http://localhost/api';
 
   constructor(public http: HttpClient) {
   }
@@ -27,6 +29,24 @@ export class Api {
     }
 
     return this.http.get(this.url + '/' + endpoint, reqOpts);
+  }
+  
+  get2(endpoint: string, params?: any, reqOpts?: any) {
+    if (!reqOpts) {
+      reqOpts = {
+        params: new HttpParams()
+      };
+    }
+
+    // Support easy query params for GET requests
+    if (params) {
+      reqOpts.params = new HttpParams();
+      for (let k in params) {
+        reqOpts.params = reqOpts.params.set(k, params[k]);
+      }
+    }
+
+    return this.http.get(this.url2 + '/' + endpoint, reqOpts);
   }
 
   post(endpoint: string, body: any, reqOpts?: any) {

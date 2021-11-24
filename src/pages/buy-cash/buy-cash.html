@@ -1,0 +1,53 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>{{ 'TAB2_TITLE' | translate }}</ion-title>
+        <ion-buttons start>
+            <button ion-button (click)="cancel()" color="danger">
+        <span color="primary" showWhen="ios">
+          {{ 'CANCEL_BUTTON' | translate }}
+        </span>
+        <ion-icon name="md-close" showWhen="core,android,windows"></ion-icon>
+      </button>
+        </ion-buttons>
+        <ion-buttons end>
+            <button ion-button (click)="buyCash()" [disabled]="on_register" strong color="danger">
+        <span color="primary" showWhen="ios">
+          {{ 'DONE_BUTTON' | translate }}
+        </span>
+        <ion-icon name="md-checkmark" showWhen="core,android,windows"></ion-icon>
+      </button>
+        </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <div class="splash-info" padding>
+        <div class="splash-logo"></div>
+    </div>
+    <form #titreForm="ngForm">
+
+        <ion-list>
+            <ion-item>
+                <ion-label style="font-size: x-large;" floating>{{ 'CASH_AMOUNT_PLACEHOLDER' | translate }} (FCFA)</ion-label>
+                <ion-input style="text-align: center;align-self: center;font-size: x-large;" type="NUMBER" placeholder="" [(ngModel)]="cash_data.amount" name="amount"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>{{ 'CASH_ADDRESS_PLACEHOLDER' | translate }}</ion-label>
+                <ion-input type="text" placeholder="" [(ngModel)]="cash_data.usdt_address" name="usdt_address"></ion-input>
+            </ion-item>
+            <ion-item>
+                <div class="col-xs-1 col-sm-1 col-lg-5 col-md-3" *ngIf="on_register" style="text-align: center;align-self: center;">
+                    <img src="../../../../assets/img/waitting.gif" alt="" style="background-size: 100%;
+            width: 80px;
+            height: 80px;">
+                </div>
+                <div class="col-lg-5 col-md-3" *ngIf="!on_register" style="text-align: center;align-self: center;font-size: xxx-large;">
+                    {{valeur_titre_achete?valeur_titre_achete.toFixed(1):'0'}}$
+                </div>
+            </ion-item>
+        </ion-list>
+    </form>
+</ion-content>

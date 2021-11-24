@@ -10,11 +10,13 @@ import { IonicStorageModule, Storage } from '@ionic/storage';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 import { Items } from '../mocks/providers/items';
 import { Settings, User, Api } from '../providers';
 import { MyApp } from './app.component';
 import { TitreService } from '../providers/titre/titre';
+import { LigdiCashService } from '../providers/ligdicash/ligdicash';
 
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
@@ -59,9 +61,9 @@ export function provideSettings(storage: Storage) {
     MyApp
   ],
   providers: [
-    Api,
+    Api,InAppBrowser,
     Items,
-    User,TitreService
+    User,TitreService,LigdiCashService
     ,
     Camera,
     SplashScreen,
