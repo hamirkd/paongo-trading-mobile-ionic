@@ -16,7 +16,7 @@ export class LigdiCashService {
    * Payer une monnaie
    */
   buyCryptoMoney(cash_data) {
-    
+    cash_data.amount = Number(cash_data.amount)
     let seq = this.api.post('mobile/ligdicash',cash_data).share();
 
     seq.subscribe((res: any) => {

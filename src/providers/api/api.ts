@@ -6,9 +6,8 @@ import { Injectable } from '@angular/core';
  */
 @Injectable()
 export class Api {
-  url: string = 'https://v2.api.paongo-trading.com/api';
-  url2: string = 'https://v2.api.paongo-trading.com';
-  // url: string = 'http://localhost/api';
+  // url: string = 'https://v2.api.paongo-trading.com/api';
+  url: string = 'http://localhost:8000/api';
 
   constructor(public http: HttpClient) {
   }
@@ -46,7 +45,7 @@ export class Api {
       }
     }
 
-    return this.http.get(this.url2 + '/' + endpoint, reqOpts);
+    return this.http.get(this.url + '/' + endpoint, reqOpts);
   }
 
   post(endpoint: string, body: any, reqOpts?: any) {

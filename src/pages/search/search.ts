@@ -52,6 +52,7 @@ export class SearchPage {
       zoom:'yes',
       location:'no'
     }
+    console.log(cash_data)
     this.ligdicash.buyCryptoMoney(cash_data).subscribe(data=>{
       const d = JSON.parse(JSON.stringify(data)) as {message,status,url_pay};
       
