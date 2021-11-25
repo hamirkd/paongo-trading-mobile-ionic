@@ -10,6 +10,7 @@ import { IonicStorageModule, Storage } from '@ionic/storage';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { Deeplinks } from  '@ionic-native/deeplinks/ngx';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 import { Items } from '../mocks/providers/items';
@@ -21,6 +22,7 @@ import { LigdiCashService } from '../providers/ligdicash/ligdicash';
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
 export function createTranslateLoader(http: HttpClient) {
+  
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
@@ -41,7 +43,8 @@ export function provideSettings(storage: Storage) {
 
 @NgModule({
   declarations: [
-    MyApp
+    MyApp,
+    // 
   ],
   imports: [
     BrowserModule,
@@ -54,13 +57,14 @@ export function provideSettings(storage: Storage) {
       }
     }),
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp
   ],
-  providers: [
+  providers: [Deeplinks,
     Api,InAppBrowser,
     Items,
     User,TitreService,LigdiCashService

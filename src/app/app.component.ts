@@ -1,10 +1,13 @@
 import { Component, ViewChild } from '@angular/core';
+import { Deeplinks } from '@ionic-native/deeplinks/ngx';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { TranslateService } from '@ngx-translate/core';
 import { Config, Nav, Platform } from 'ionic-angular';
+// import {StatusBar, Deeplinks} from 'ionic-native';
 
 import { FirstRunPage, HomeRunPage } from '../pages';
+import { LoginPage } from '../pages/login/login';
 import { Settings } from '../providers';
 
 @Component({
@@ -50,17 +53,37 @@ export class MyApp {
     { title: 'Search', component: 'SearchPage' }
   ]
 
-  constructor(private translate: TranslateService, platform: Platform, settings: Settings, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen) {
+  constructor(private translate: TranslateService, 
+    protected deeplinks: Deeplinks,
+        platform: Platform, settings: Settings, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      
     });
     this.initTranslate();
     if(!localStorage.getItem("TutoralNoActif")){
       this.rootPage = FirstRunPage;
     }
+  }
+
+  setupDeeplinks(){
+    
+    this.deeplinks.route({
+      '/login': LoginPage,
+      // '/universal-links-test': AboutPage,
+      // '/products/:productId': ProductPage
+    }).subscribe(match => {
+      // match.$route - the route we matched, which is the matched entry from the arguments to route()
+      // match.$args - the args passed in the link
+      // match.$link - the full link data
+      console.log('Successfully matched route', match);
+    }, nomatch => {
+      // nomatch.$link - the full link data
+      console.error('Got a deeplink that didn\'t match', nomatch);
+    });
   }
 
   initTranslate() {
